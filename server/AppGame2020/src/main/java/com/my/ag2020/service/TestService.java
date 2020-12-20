@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.my.ag2020.mapper.TestMapper;
+import com.my.ag2020.vo.MonsterVO;
 import com.my.ag2020.vo.TestVO;
 
 @Service
@@ -16,6 +17,10 @@ public class TestService {
 	
 	public List<TestVO> viewAll() {
 		return mapper.viewAll();
+	}
+	
+	public List<MonsterVO> viewMonsterByType(String type) {
+		return mapper.viewMonsterByType(type);
 	}
 
 }

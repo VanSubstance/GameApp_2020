@@ -3,7 +3,10 @@
 <mapper namespace="com.my.ag2020.mapper.TestMapper">
 
 	<select id="viewAll" resultType="com.my.ag2020.vo.TestVO">
-	  SELECT * FROM TEST
+		SELECT * FROM TEST
 	</select>
 	
+	<select id="viewMonsterByType" resultType="com.my.ag2020.vo.MonsterVO" parameterType = "String">
+		select * from monster where type = #{type}
+	</select>  
 </mapper>

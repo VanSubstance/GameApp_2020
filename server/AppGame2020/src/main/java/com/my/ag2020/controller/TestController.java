@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.my.ag2020.service.TestService;
+import com.my.ag2020.vo.MonsterVO;
 import com.my.ag2020.vo.TestVO;
 
 @RestController
@@ -19,6 +21,11 @@ public class TestController {
 	@RequestMapping("/all")
 	public List<TestVO> viewAll() {
 		return service.viewAll();
+	}
+	
+	@RequestMapping(value = "/monster/type/{type}", method = RequestMethod.GET)
+	public List<MonsterVO> viewMonsterByType(String type) {
+		return service.viewMonsterByType(type);
 	}
 
 }
