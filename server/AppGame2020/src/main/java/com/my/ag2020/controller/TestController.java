@@ -2,7 +2,7 @@ package com.my.ag2020.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,14 +45,8 @@ public class TestController {
 	}
 	
 	@RequestMapping(value = "/monster/name/{name}", method = RequestMethod.GET)
-	public List<WeakMonsterVO> viewWeakMonsterByMonster(@PathVariable String name) {
-		List<WeakMonsterVO> result = new ArrayList<WeakMonsterVO>();
-		for (MonsterVO origin : service.viewWeakMonsterByMonster(name)) {
-			WeakMonsterVO newOne = new WeakMonsterVO();
-			newOne.setWeakMonsterVO(origin);
-			result.add(newOne);
-		}
-		return result;
+	public MonsterVO viewMonsterByName(@PathVariable String name) {
+		return service.viewMonsterByName(name);
 	}
 
 }

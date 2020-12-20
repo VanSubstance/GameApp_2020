@@ -14,7 +14,7 @@
 		select * from compatibility where weak = #{weak}
 	</select>
 	
-	<select id="viewWeakMonsterByMonster" resultType="com.my.ag2020.vo.MonsterVO" parameterType = "String">
+	<select id="viewMonsterByName" resultType="com.my.ag2020.vo.MonsterVO" parameterType = "String">
 		select * from monster where name = #{name}
 	</select>
 	
