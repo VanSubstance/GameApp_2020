@@ -3,6 +3,7 @@ package com.my.ag2020.vo;
 public class MonsterVO {
 	String name, type;
 	int hp, attack;
+	
 	public String getName() {
 		return name;
 	}

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.my.ag2020.service.TestService;
+import com.my.ag2020.vo.CompatibilityVO;
 import com.my.ag2020.vo.MonsterVO;
 import com.my.ag2020.vo.TestVO;
 
@@ -26,6 +27,11 @@ public class TestController {
 	@RequestMapping(value = "/monster/type/{type}", method = RequestMethod.GET)
 	public List<MonsterVO> viewMonsterByType(String type) {
 		return service.viewMonsterByType(type);
+	}
+	
+	@RequestMapping(value = "/compatibility/weak/{weak}", method = RequestMethod.GET)
+	public List<CompatibilityVO> viewStrongTypeByType(String weak) {
+		return service.viewStrongTypeByType(weak);
 	}
 
 }

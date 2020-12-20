@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.my.ag2020.mapper.TestMapper;
+import com.my.ag2020.vo.CompatibilityVO;
 import com.my.ag2020.vo.MonsterVO;
 import com.my.ag2020.vo.TestVO;
 
@@ -21,6 +22,10 @@ public class TestService {
 	
 	public List<MonsterVO> viewMonsterByType(String type) {
 		return mapper.viewMonsterByType(type);
+	}
+	
+	public List<CompatibilityVO> viewStrongTypeByType(String weak) {
+		return mapper.viewStrongTypeByType(weak);
 	}
 
 }
