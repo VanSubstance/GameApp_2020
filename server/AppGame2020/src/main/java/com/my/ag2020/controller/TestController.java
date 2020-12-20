@@ -49,4 +49,19 @@ public class TestController {
 		return service.viewMonsterByName(name);
 	}
 
+	@RequestMapping(value = "/monster/weakByName/{name}", method = RequestMethod.GET)
+	public List<WeakMonsterVO> viewWeakMonsterByName(@PathVariable String name) {
+		List<WeakMonsterVO> result = new ArrayList<WeakMonsterVO>();
+		String type = service.viewMonsterByName(name).getType();
+		for (String item : service.viewWeakByType(type)) {
+			for(MonsterVO origin : service.viewMonsterByType(item)) {
+				WeakMonsterVO path = new WeakMonsterVO();
+				path.setWeakMonsterVO(origin);
+				result.add(path);
+			}
+		}
+		return result;
+	}
+	
+	
 }
