@@ -1,5 +1,6 @@
 package com.my.ag2020.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.my.ag2020.service.TestService;
 import com.my.ag2020.vo.CompatibilityVO;
 import com.my.ag2020.vo.MonsterVO;
+import com.my.ag2020.vo.StrongVO;
 import com.my.ag2020.vo.TestVO;
 
 @RestController
@@ -31,8 +33,14 @@ public class TestController {
 	}
 	
 	@RequestMapping(value = "/compatibility/weak/{weak}", method = RequestMethod.GET)
-	public List<CompatibilityVO> viewStrongTypeByType(@PathVariable String weak) {
-		return service.viewStrongTypeByType(weak);
+	public List<StrongVO> viewStrongTypeByType(@PathVariable String weak) {
+		List<StrongVO> result = new ArrayList<StrongVO>();
+		for (CompatibilityVO origin : service.viewStrongTypeByType(weak)) {
+			StrongVO newOne = new StrongVO();
+			newOne.setStrongVO(origin);
+			result.add(newOne);
+		}
+		return result;
 	}
 
 }
