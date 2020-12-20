@@ -5,4 +5,5 @@
 	<select id="viewAll" resultType="com.my.ag2020.vo.TestVO">
 	  SELECT * FROM TEST
 	</select>
+	
 </mapper>
