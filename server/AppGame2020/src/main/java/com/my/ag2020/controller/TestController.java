@@ -3,6 +3,7 @@ package com.my.ag2020.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,11 +27,12 @@ public class TestController {
 	
 	@RequestMapping(value = "/monster/type/{type}", method = RequestMethod.GET)
 	public List<MonsterVO> viewMonsterByType(String type) {
+	public List<MonsterVO> viewMonsterByType(@PathVariable String type) {
 		return service.viewMonsterByType(type);
 	}
 	
 	@RequestMapping(value = "/compatibility/weak/{weak}", method = RequestMethod.GET)
-	public List<CompatibilityVO> viewStrongTypeByType(String weak) {
+	public List<CompatibilityVO> viewStrongTypeByType(@PathVariable String weak) {
 		return service.viewStrongTypeByType(weak);
 	}
 
