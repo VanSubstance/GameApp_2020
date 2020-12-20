@@ -28,4 +28,7 @@ public class TestService {
 		return mapper.viewStrongTypeByType(weak);
 	}
 
+	public List<MonsterVO> viewWeakMonsterByMonster(String name) {
+		return mapper.viewWeakMonsterByMonster(name);
+	}
 }

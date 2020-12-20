@@ -11,7 +11,11 @@
 	</select>
 	
 	<select id="viewStrongTypeByType" resultType="com.my.ag2020.vo.CompatibilityVO" parameterType = "String">
-		select strong,percent from compatibility where weak = #{weak}
+		select * from compatibility where weak = #{weak}
+	</select>
+	
+	<select id="viewWeakMonsterByMonster" resultType="com.my.ag2020.vo.MonsterVO" parameterType = "String">
+		select * from monster where name = #{name}
 	</select>
 	
 </mapper>

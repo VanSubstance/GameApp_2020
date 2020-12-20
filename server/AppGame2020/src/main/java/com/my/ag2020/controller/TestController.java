@@ -14,6 +14,7 @@ import com.my.ag2020.vo.CompatibilityVO;
 import com.my.ag2020.vo.MonsterVO;
 import com.my.ag2020.vo.StrongVO;
 import com.my.ag2020.vo.TestVO;
+import com.my.ag2020.vo.WeakMonsterVO;
 
 @RestController
 @RequestMapping("/test")
@@ -38,6 +39,17 @@ public class TestController {
 		for (CompatibilityVO origin : service.viewStrongTypeByType(weak)) {
 			StrongVO newOne = new StrongVO();
 			newOne.setStrongVO(origin);
+			result.add(newOne);
+		}
+		return result;
+	}
+	
+	@RequestMapping(value = "/monster/name/{name}", method = RequestMethod.GET)
+	public List<WeakMonsterVO> viewWeakMonsterByMonster(@PathVariable String name) {
+		List<WeakMonsterVO> result = new ArrayList<WeakMonsterVO>();
+		for (MonsterVO origin : service.viewWeakMonsterByMonster(name)) {
+			WeakMonsterVO newOne = new WeakMonsterVO();
+			newOne.setWeakMonsterVO(origin);
 			result.add(newOne);
 		}
 		return result;

@@ -15,4 +15,6 @@ public interface TestMapper {
 	public List<MonsterVO> viewMonsterByType(@Param("type") String type);
 	
 	public List<CompatibilityVO> viewStrongTypeByType(@Param("weak") String weak);
+	
+	public List<MonsterVO> viewWeakMonsterByMonster(@Param("name") String name);
 }
