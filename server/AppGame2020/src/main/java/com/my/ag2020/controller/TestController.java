@@ -26,7 +26,6 @@ public class TestController {
 	}
 	
 	@RequestMapping(value = "/monster/type/{type}", method = RequestMethod.GET)
-	public List<MonsterVO> viewMonsterByType(String type) {
 	public List<MonsterVO> viewMonsterByType(@PathVariable String type) {
 		return service.viewMonsterByType(type);
 	}
