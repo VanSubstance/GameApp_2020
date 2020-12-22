@@ -11,7 +11,7 @@
 		id="dataSource">
 		<property value="oracle.jdbc.driver.OracleDriver"
 			name="driverClassName" />
-		<property value="jdbc:oracle:thin:222.106.121.250/:1521:orcl"
+		<property value="jdbc:oracle:thin:222.232.15.205/:1521:orcl"
 			name="url" />
 		<!-- 오라클 사용자 이름 -->
 		<property value="ROOTAPPGAME" name="username" />
