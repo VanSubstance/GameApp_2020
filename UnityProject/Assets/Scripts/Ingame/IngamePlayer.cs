@@ -9,6 +9,7 @@ public class IngamePlayer:MonoBehaviour
     public int currentTowerNumber;
     public int maxTowerNumber;
 
+
     private void Awake()
     {
         Init();    
@@ -16,7 +17,7 @@ public class IngamePlayer:MonoBehaviour
 
     private void Init()
     { 
-
+        resource = new Resource();
     }
 
     public class Resource
@@ -26,26 +27,34 @@ public class IngamePlayer:MonoBehaviour
 
     public bool CheckResource(IngamePlayer.Resource cost)
     {
-        return true;
+        if(resource.gold > cost.gold)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public bool CheckLife(int damage)
     {
+        if(life < damage)
+        {
+            return false;
+        }
         return true;
     }
 
     public bool CheckDeployEnable(int cost)
     {
-        return true;
-    }
-
-    public bool ChangeResource(IngamePlayer.Resource change)
-    {
-        return true;
+        if(currentTowerNumber + cost < maxTowerNumber)
+        {
+            return true;
+        }
+        return false;
     }
 
     public void SetResource(IngamePlayer.Resource value)
     {
-
+        resource.gold = value.gold;
     }
 }
